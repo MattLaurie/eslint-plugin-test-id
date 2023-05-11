@@ -18,6 +18,6 @@ Examples of **correct** code for this rule:
 
 ```vue
 
-<input data-test-id="someUniqueString" v-model="someModel">
+<input data-testid="someUniqueString" v-model="someModel">
 
 ```

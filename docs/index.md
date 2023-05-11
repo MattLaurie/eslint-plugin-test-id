@@ -52,7 +52,7 @@ Examples of **correct** code for this rule:
 
 ```vue
 
-<input data-test-id="someUniqueString" v-model="someModel">
+<input data-testid="someUniqueString" v-model="someModel">
 
 ```
 
@@ -67,7 +67,7 @@ Examples of **correct** code for this rule:
 will fix to
 
 ```vue
-<template><input data-test-id="test" v-model="test" /></template>
+<template><input data-testid="test" v-model="test" /></template>
 ```
 
 ### Scenario 2
@@ -80,7 +80,7 @@ will fix to
 
 ```vue
 <template>
-  <custom data-test-id="test.again.src" v-model="test.again.src" />
+  <custom data-testid="test.again.src" v-model="test.again.src" />
 </template>
 ```
 
@@ -93,7 +93,7 @@ will fix to
 will fix to
 
 ```vue
-<template><custom data-test-id="test.again" v-model="test.again" /></template>
+<template><custom data-testid="test.again" v-model="test.again" /></template>
 ```
 
 ### Scenario 4
@@ -106,7 +106,7 @@ will fix to
 
 ```vue
 <template>
-  <custom data-test-id="test.again" v-model="test['again']" />
+  <custom data-testid="test.again" v-model="test['again']" />
 </template>
 ```
 
@@ -119,7 +119,7 @@ will fix to
 will fix to
 
 ```vue
-<template><custom data-test-id="test.5" v-model="test[5]" /></template>
+<template><custom data-testid="test.5" v-model="test[5]" /></template>
 ```
 
 ### Scenario 5
@@ -132,6 +132,6 @@ will fix to
 
 ```vue
 <template>
-  <custom data-test-id="test.5.val" v-model="test[5]['val']" />
+  <custom data-testid="test.5.val" v-model="test[5]['val']" />
 </template>
 ```
