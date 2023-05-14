@@ -52,7 +52,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: '<template><input v-model="test"></template>',
       output: '<template><input data-test-id="test" v-model="test"></template>',
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with v-model.",
@@ -66,7 +65,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: '<template><custom v-model="test.again.src" /></template>',
       output: '<template><custom data-test-id="test.again.src" v-model="test.again.src" /></template>',
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with v-model.",
@@ -80,7 +78,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: '<template><custom v-model="test.again" /></template>',
       output: '<template><custom data-test-id="test.again" v-model="test.again" /></template>',
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with v-model.",
@@ -94,7 +91,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom v-model="test['again']" /></template>`,
       output: `<template><custom data-test-id="test.again" v-model="test['again']" /></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with v-model.",
@@ -108,7 +104,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom v-model="test[5]" /></template>`,
       output: `<template><custom data-test-id="test.5" v-model="test[5]" /></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with v-model.",
@@ -122,7 +117,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom v-model="test[5]['val']" /></template>`,
       output: `<template><custom data-test-id="test.5.val" v-model="test[5]['val']" /></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with v-model.",
@@ -136,7 +130,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><button @click="go">Save</button></template>`,
       output: `<template><button data-test-id="go" @click="go">Save</button></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with event.",
@@ -150,7 +143,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom @change="go">Save</custom></template>`,
       output: `<template><custom data-test-id="go" @change="go">Save</custom></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with event.",
@@ -164,7 +156,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom @click="go">Save</custom></template>`,
       output: `<template><custom data-test-id="go" @click="go">Save</custom></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with event.",
@@ -178,7 +169,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom v-model="someModel" @change="go">Save</custom></template>`,
       output: `<template><custom data-test-id="someModel" v-model="someModel" @change="go">Save</custom></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with v-model.",
@@ -192,7 +182,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom @change="go(testId)">Save</custom></template>`,
       output: `<template><custom data-test-id="go" @change="go(testId)">Save</custom></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with event.",
@@ -206,7 +195,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom @change="go(testId)" @click="onClick(testId)">Save</custom></template>`,
       output: `<template><custom data-test-id="go" @change="go(testId)" @click="onClick(testId)">Save</custom></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with event.",
@@ -220,7 +208,6 @@ ruleTester.run('data-test-id', rule, {
       filename: 'test.vue',
       code: `<template><custom @click="onClick(testId)" @change="go(testId)" >Save</custom></template>`,
       output: `<template><custom data-test-id="onClick" @click="onClick(testId)" @change="go(testId)" >Save</custom></template>`,
-      options: ['never'],
       errors: [
         {
           message: "Expected 'data-test-id' with event.",
@@ -238,7 +225,6 @@ ruleTester.run('data-test-id custom attribute', rule, {
       filename: 'test.vue',
       code: '<template><input data-blah="someUniqueId" /></template>',
       options: [
-        'always',
         {
           attributeId: 'data-blah'
         }
@@ -251,7 +237,6 @@ ruleTester.run('data-test-id custom attribute', rule, {
       code: '<template><input data-test-id="someUniqueId" v-model="test"/></template>',
       output: '<template><input data-blah="test" data-test-id="someUniqueId" v-model="test"/></template>',
       options: [
-        'always',
         {
           attributeId: 'data-blah'
         }
